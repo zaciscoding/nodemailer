@@ -1,0 +1,37 @@
+              <!-- bootstrap/ejs form for nodemailer --> 
+
+
+
+               <form class="mb-5 form-group" action="/contactform" method="post"> <!-- form start --> 
+                  <div class="form-group">
+               <label name="name" class=" sr-only form-control-label"> Name </label>
+               <input type="text" class="formwidth form-control" name="name" id="name" placeholder="Name" required/>
+               <p class=" ml-1 form-text"> This field is required. </p>  
+            </div> 
+               <div class="form-group">
+               <label name="email" class=" sr-only form-control-label"> E-mail</label>
+               <input type="text" class="formwidth form-control" name="email" id="email" placeholder="Email" required/>
+               <p class=" ml-1 form-text"> This field is required. </p>  
+            </div> 
+            <div class="form-group">
+               <label for="message" class="sr-only form-control-label"> Message </label>
+               <textarea class=" formwidth form-control" rows="6" placeholder="Message" name="message" id="message" required></textarea>
+            </div> 
+            <div class="form-group">
+               <!-- class on button is linked to javascript event --> 
+               <input type="submit" class=" contact-button mt-1 btn btn-lg">
+                    <% if(err !== null){ %> 
+               <img class="ml-2" src="../images/xmark.png" style="height:30px ; width:auto;"> 
+                    <% } %> 
+                    <% if(msg !== null) { %> 
+               <img  class="ml-2" src="../images/greencheckmark.png" style="height:30px ; width:auto;"> 
+                    <% } %> 
+               </div>
+                    <% if(err !== null){ %> 
+               <h3> <%= err %> </h3>
+                    <% } %> 
+                    <% if(msg !== null){ %> 
+               <h3> <%= msg %> Click <a class="message-success" href="/index">here</a> to go back to home page.
+               </h3> 
+                    <% } %> 
+               </form>
