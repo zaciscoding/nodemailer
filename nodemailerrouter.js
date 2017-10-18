@@ -1,5 +1,4 @@
-// Setup for nodemailer npm module, should email of user recipient, and email pass.
-// should
+// Setup for nodemailer npm module, should use email of recipient user, and that users email password.
 
 const express = require('express')
 const router = express.Router()
